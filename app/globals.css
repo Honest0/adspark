@@ -1,0 +1,83 @@
+/* ✅ Tailwind first */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Then your custom CSS */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ✨ Smooth SVG path draw animation */
+@keyframes drawLine {
+  from {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+  }
+  to {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+  }
+}
+
+.draw-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLine 1.2s ease-out forwards;
+}
+
+
+@font-face {
+  font-family: "HelveticaNeue";
+  src: url("/fonts/HelveticaNeueMedium.otf") format("truetype");
+  font-weight: 500;
+  font-style: medium;
+}
+@font-face {
+  font-family: 'MarkPro';
+  src: url("/fonts/Mark Pro.ttf") format("truetype");
+  font-weight: 500;
+  font-style: medium;
+}
+
+@keyframes pulseGlow {
+  0% {
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+  50% {
+    filter: blur(15px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "HelveticaNeue", sans-serif, Helvetica
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
